@@ -182,3 +182,43 @@
     border-right-color: var(--border);
   }
 }
+/* Login inputs */
+#center input {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--accent-bg);
+  color: var(--text-h);
+  font-size: 16px;
+  outline: none;
+}
+
+#center input:focus {
+  border-color: var(--accent);
+}
+
+/* Login button */
+#center input ~ button {
+  font-size: 16px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+#center input ~ button:hover {
+  border-color: var(--accent-border);
+}
+
+#center input ~ button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}

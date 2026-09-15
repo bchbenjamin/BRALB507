@@ -5,7 +5,17 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [name, setname] = useState('')
+  const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
+
+  const login = () => {
+    if (name === 'bchbenjamin' && password === 'yogeetha') {
+      setMessage('Login successful!')
+    } else {
+      setMessage('Invalid username or password')
+    }
+  }
 
   return (
     <>
@@ -15,19 +25,34 @@ function App() {
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
+
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
+          <h1>Sign-In</h1>
+          <p>Please enter your username and password</p>
+
+        <div className="login-form">
+          <input
+            type="text"
+            placeholder="Username"
+            value={name}
+            onChange={(e) => setname(e.target.value)}
+          />
+
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <button type="button" onClick={login}>
+            Sign In
+          </button>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+
+
+          <p>{message}</p>
+        </div>
       </section>
 
       <div className="ticks"></div>
@@ -54,6 +79,7 @@ function App() {
             </li>
           </ul>
         </div>
+
         <div id="social">
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#social-icon"></use>
